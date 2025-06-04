@@ -122,7 +122,7 @@ const Portfolio = () => {
           {/* Animated Skills */}
           <div className={`mb-8 transition-all duration-1500 delay-700 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
             <div className="text-2xl sm:text-3xl font-semibold mb-4">
-              <span className="text-gray-300">I'm a </span>
+              <span className="text-gray-300">Im a </span>
               <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent transition-all duration-500">
                 {skills[currentSkill]}
               </span>
