@@ -1,6 +1,7 @@
 // app/about/page.js
 import { FaGithub, FaLinkedin, FaTwitter, FaLaptopCode, FaBrain, FaGraduationCap } from 'react-icons/fa';
 import Image from "next/image"
+import Link from 'next/link';
 const AboutPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-stone-900 to-stone-800 text-amber-50">
@@ -8,10 +9,10 @@ const AboutPage = () => {
       <nav className="flex justify-between items-center p-6 max-w-6xl mx-auto">
         
         <div className="flex space-x-6">
-          <a href="/" className="hover:text-amber-400 transition-colors">Home</a>
-          <a href="/about" className="text-amber-400 border-b border-amber-400">About</a>
-          <a href="/projects" className="hover:text-amber-400 transition-colors">Projects</a>
-          <a href="/contact" className="hover:text-amber-400 transition-colors">Contact</a>
+          <Link href="/" className="hover:text-amber-400 transition-colors">Home</Link>
+          <Link href="/about" className="text-amber-400 border-b border-amber-400">About</Link>
+          <Link href="/projects" className="hover:text-amber-400 transition-colors">Projects</Link>
+          <Link href="/contact" className="hover:text-amber-400 transition-colors">Contact</Link>
         </div>
       </nav>
 
@@ -21,33 +22,33 @@ const AboutPage = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
           <div className="md:col-span-2">
             <h1 className="text-5xl md:text-6xl font-bold mb-4">
-              Hi, I'm <span className="text-amber-400">Asharib Shahid</span>
+              Hi, Im <span className="text-amber-400">Asharib Shahid</span>
             </h1>
             <h2 className="text-2xl md:text-3xl mb-6 font-light text-amber-200">
               Web Developer & Agentic AI Specialist
             </h2>
             <p className="text-lg mb-8 max-w-2xl leading-relaxed">
-              A 17 y/o self-driven and tech-savvy student with a passion for modern web development 
+              Link 17 y/o self-driven and tech-savvy student with Link passion for modern web development 
               and Artificial Intelligence. I specialize in building full-stack web applications 
               and integrating AI to create future-forward digital solutions.
             </p>
             <div className="flex space-x-4">
-              <a 
+              <Link 
                 href="https://github.com/asharibshahid" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="bg-amber-700 hover:bg-amber-600 text-white px-6 py-3 rounded-md flex items-center transition-colors"
               >
                 <FaGithub className="mr-2" /> GitHub
-              </a>
-              <a 
+              </Link>
+              <Link
                 href="https://linkedin.com/in/asharib-shahid-/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="border border-amber-400 text-amber-400 hover:bg-amber-400/10 px-6 py-3 rounded-md flex items-center transition-colors"
               >
                 <FaLinkedin className="mr-2" /> LinkedIn
-              </a>
+              </Link>
             </div>
           </div>
           <div className="flex justify-center">
@@ -137,7 +138,7 @@ const AboutPage = () => {
                 <p className="text-amber-200/80 italic mb-2">
                 Freelance</p>
                 <p className="text-amber-100/80">
-                  Developed a Multiple  responsive web applications using Next.js, TypeScript, 
+                  Developed Link Multiple  responsive web applications using Next.js, TypeScript, 
                   and integrated APIs with CMS and Web3Form solutions For International Clients.
                 </p>
               </div>
@@ -160,7 +161,7 @@ const AboutPage = () => {
                 </div>
                 <p className="text-amber-200/80 italic mb-2">GIAIC Hackathon, Karachi</p>
                 <p className="text-amber-100/80">
-                  Built a functional e-commerce site in 48 hours using Next.js, 
+                  Built Link functional e-commerce site in 48 hours using Next.js, 
                   Tailwind CSS, and Sanity CMS.
                 </p>
               </div>
@@ -218,22 +219,22 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTLink Section */}
       <section className="py-20 px-6 bg-gradient-to-r from-stone-800 to-stone-900">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Interested in Working Together?
           </h2>
           <p className="text-lg mb-10 max-w-2xl mx-auto text-amber-100/80">
-            Whether you need a cutting-edge web application or AI-powered solutions, 
+            Whether you need Link cutting-edge web application or AI-powered solutions, 
             Im ready to bring your ideas to life. Lets create something amazing.
           </p>
-          <a 
+          <Link 
             href="/contact" 
             className="inline-block bg-amber-400 text-stone-900 font-bold px-8 py-4 rounded-md hover:bg-amber-300 transition-colors"
           >
             Get In Touch
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -249,18 +250,18 @@ const AboutPage = () => {
             </p>
           </div>
           <div className="flex space-x-6">
-            <a href="https://github.com/asharibshahid" target="_blank" rel="noopener noreferrer" className="text-amber-100/60 hover:text-amber-400 transition-colors">
+            <Link href="https://github.com/asharibshahid" target="_blank" rel="noopener noreferrer" className="text-amber-100/60 hover:text-amber-400 transition-colors">
               <FaGithub className="text-xl" />
-            </a>
-            <a href="https://linkedin.com/in/asharib-shahid-/" target="_blank" rel="noopener noreferrer" className="text-amber-100/60 hover:text-amber-400 transition-colors">
+            </Link>
+            <Link href="https://linkedin.com/in/asharib-shahid-/" target="_blank" rel="noopener noreferrer" className="text-amber-100/60 hover:text-amber-400 transition-colors">
               <FaLinkedin className="text-xl" />
-            </a>
-            <a href="https://x.com/AsharibSheikh01" target="_blank" rel="noopener noreferrer" className="text-amber-100/60 hover:text-amber-400 transition-colors">
+            </Link>
+            <Link href="https://x.com/AsharibSheikh01" target="_blank" rel="noopener noreferrer" className="text-amber-100/60 hover:text-amber-400 transition-colors">
               <FaTwitter className="text-xl" />
-            </a>
-            <a href="https://asharib.vercel.app" target="_blank" rel="noopener noreferrer" className="text-amber-100/60 hover:text-amber-400 transition-colors">
+            </Link>
+            <Link href="https://asharib.vercel.app" target="_blank" rel="noopener noreferrer" className="text-amber-100/60 hover:text-amber-400 transition-colors">
               <FaLaptopCode className="text-xl" />
-            </a>
+            </Link>
           </div>
         </div>
       </footer>
