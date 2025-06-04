@@ -5,7 +5,7 @@ import Link from 'next/link';
 const Page = () => {
   const [activeFilter, setActiveFilter] = React.useState<'all' | 'ai' | 'web'>('all');
   const [searchTerm, setSearchTerm] = React.useState('');
-  const [currentPage, setCurrentPage] = React.useState('projects');
+  
 
  
    // Add your skills array if needed
@@ -224,7 +224,7 @@ const Page = () => {
  
 
   return (
-    <section className={`min-h-screen py-20 px-4  bg-black sm:px-6 lg:px-8 transition-all duration-1000 ${currentPage === 'projects' ? 'opacity-100' : 'opacity-0 pointer-events-none absolute inset-0'}`}>
+    <section className={"min-h-screen py-20 px-4  bg-black sm:px-6 lg:px-8 transition-all duration-1000 "}>
         <div className="max-w-7xl mx-auto">
           
           {/* Projects Header */}
