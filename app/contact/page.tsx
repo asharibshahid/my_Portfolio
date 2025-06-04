@@ -70,7 +70,7 @@ const ContactPage = () => {
         setSubmitStatus('error');
       }
     } catch (error) {
-      setSubmitStatus('error');
+      setSubmitStatus(typeof error === 'string' ? error : 'error');
     }
     
     setIsSubmitting(false);
@@ -251,7 +251,7 @@ const ContactPage = () => {
               {submitStatus === 'success' && (
                 <div className="mt-4 p-4 bg-green-500/20 border border-green-500/30 rounded-xl flex items-center space-x-3 text-green-300">
                   <CheckCircle className="w-5 h-5" />
-                  <span>Message sent successfully! I'll get back to you soon.</span>
+                  <span>Message sent successfully! Ill get back to you soon.</span>
                 </div>
               )}
               
