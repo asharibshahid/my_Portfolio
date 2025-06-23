@@ -56,7 +56,7 @@ const AboutPage = () => {
                 
               <div className="w-64 h-64 bg-amber-400/10 rounded-full overflow-hidden border-4 border-amber-400/30">
               <Image
-             src="/pfp2.png"
+             src="/pfp2.jpeg"
                                 alt="Asharib Shahid"
                                 className="rounded-full object-cover w-full h-full"
                                 width={200}
