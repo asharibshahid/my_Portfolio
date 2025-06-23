@@ -91,7 +91,7 @@ const Portfolio = () => {
               <div className="absolute inset-2 bg-slate-800 rounded-full flex items-center justify-center">
           
                   <Image
-                    src="/pfp.png"
+                    src="/pfp.jpeg"
                     alt="Asharib Shahid"
                     className="rounded-full object-cover w-full h-full"
                     width={200}
@@ -109,10 +109,10 @@ const Portfolio = () => {
               Asharib Shahid
             </h1>
             <div className="text-xl sm:text-2xl text-gray-300 mb-4">
-              <span className="inline-block">17-year-old </span>
-              <span className="inline-block bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent font-semibold">AGENTIC AI </span>
+            
+              <span className="inline-block bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent font-semibold"> WEB </span>
               <span className="inline-block"> & </span>
-              <span className="inline-block bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent font-semibold">Full-Stack Developer</span>
+              <span className="inline-block bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent font-semibold">Agentic AI Developer</span>
             </div>
             <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
               Building AI-powered futures with modern web technologies while staying rooted in Islamic values
