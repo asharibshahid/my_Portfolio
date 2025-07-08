@@ -131,7 +131,19 @@ const AboutPage = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16">
           <div>
             <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 pb-2 border-b border-amber-400/30">Experience</h2>
-            
+              <div className="space-y-6 sm:space-y-8">
+              <div className="border-l-2 border-amber-400 pl-4 sm:pl-6 py-1">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
+                  <h3 className="text-lg sm:text-xl font-bold">Ai Automation Eng</h3>
+                  <span className="bg-amber-400/10 text-amber-400 px-3 py-1 rounded-full text-sm self-start">2025-Present</span>
+                </div>
+                <p className="text-amber-200/80 italic mb-2 text-sm sm:text-base">
+                  Onsite
+                </p>
+                <p className="text-amber-100/80 text-sm sm:text-base">
+                  Developed multiple Ai Agents That Can Automate The work Like I've Build COLD Caling Agents And thats Type of More ...Working On Custom OPenAI AGent, N8n ,Zapier , Buit With Code Too ...
+                </p>
+              </div>
             <div className="space-y-6 sm:space-y-8">
               <div className="border-l-2 border-amber-400 pl-4 sm:pl-6 py-1">
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
