@@ -56,7 +56,7 @@ const Page = () => {
       category: "ai",
       link: "#",
       github: "https://github.com/asharibshahid/AI_Analyzer_Backend-",
-      featured: true,
+      featured: false,
       year: "2025",
       status: "In Progress"
     },
@@ -105,7 +105,7 @@ const Page = () => {
       category: "web",
       link: "https://techtalks-yyt.vercel.app",
       github: "https://github.com/asharibshahid/Pakistan-sNova",
-      featured: true,
+      featured: false,
       year: "2024",
       status: "Live"
     },
@@ -204,7 +204,45 @@ const Page = () => {
       featured: false,
       year: "2024",
       status: "Completed"
-    }
+    },
+     {
+      id: 16,
+      title: "Ai Cold Calling Agent",
+      description: "This agent automatically calls leads, talks like a real human, handles objections, and even books meetings ",
+      tech: ["ElevenLabs", "Api", "Twillio", "OpenAI"],
+      category: "ai",
+      link: "https://elevenlabs.io/app/conversational-ai/batch-calling/btcal_01jz2fe22jev3rew2hrkkgkxps",
+      github: "https://github.com/asharibshahid/Cold_Calling_Ai_Agent_Docs",
+      featured: true,
+      year: "2025",
+      status: "Completed"
+    },
+    {
+      id: 17,
+      title: "Auto Lead Generator Agent",
+      description: "Extract verified  business leads in 30 seconds 
+Direct from Google Maps & LinkedIn - no more guesswork ",
+      tech: ["AgentSdk", "GeminiApi", "Serper", "streamlit"],
+      category: "ai",
+      link: "https://99098989zzz.streamlit.app/",
+      github: "https://github.com/asharibshahid/Ai_Lead_Generation",
+      featured: true,
+      year: "2025",
+      status: "Completed"
+    },
+  {
+      id: 18,
+      title: "Email Automation: SEND : READ : ETC",
+      description: "Ai Agent Email Automation Which Can Read Your Inbox Which Can Auto Ai Reply To You Sender and more... ",
+      tech: ["AgentSdk", "GeminiApi", "GoogleCloud", "Gmail"],
+      category: "ai",
+      link: "https://github.com/asharibshahid/Learn_Agentic_Together",
+      github: "https://github.com/asharibshahid/Email_Automation_Agent,
+      featured: true,
+      year: "2025",
+      status: "Completed"
+    },
+    
   ];
   
 
