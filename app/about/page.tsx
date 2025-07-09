@@ -1,6 +1,7 @@
 // app/about/page.tsx
 'use client';
 
+import React from 'react';
 import { FaGithub, FaLinkedin, FaTwitter, FaLaptopCode, FaBrain, FaGraduationCap, FaDownload, FaRobot } from 'react-icons/fa';
 import Image from "next/image";
 import Link from 'next/link';
