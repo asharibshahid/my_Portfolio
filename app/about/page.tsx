@@ -50,7 +50,7 @@ const AboutPage = () => {
           
           <div className="md:order-1 md:col-span-2">
             <h1 className="text-3xl md:text-5xl font-bold mb-2 md:mb-4">
-              Hi, I'm <span className="text-amber-400">Asharib Shahid</span>
+              Hi, Im <span className="text-amber-400">Asharib Shahid</span>
             </h1>
             <h2 className="text-xl md:text-2xl mb-4 md:mb-6 font-light text-amber-200">
               Web Developer & Agentic AI Specialist
@@ -186,7 +186,7 @@ const AboutPage = () => {
                 </div>
                 <p className="text-amber-200/80 italic mb-2 text-sm md:text-base">GIAIC - Karachi</p>
                 <p className="text-amber-100/80 text-sm md:text-base">
-                  Focus: AI, Python, Web Development, AGI (Governor's Initiative for AI & Computing)
+                  Focus: AI, Python, Web Development, AGI (Governor s Initiative for AI & Computing)
                 </p>
               </div>
               
@@ -234,7 +234,7 @@ const AboutPage = () => {
           </h2>
           <p className="text-base md:text-lg mb-8 md:mb-10 max-w-2xl mx-auto text-amber-100/80">
             Whether you need a cutting-edge web application or AI-powered solutions, 
-            I'm ready to bring your ideas to life. Let's create something amazing.
+            Im ready to bring your ideas to life. Lets create something amazing.
           </p>
           <Link 
             href="/contact" 
