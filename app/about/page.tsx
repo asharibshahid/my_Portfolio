@@ -2,9 +2,18 @@
 'use client';
 
 import React from 'react';
-import { FaGithub, FaLinkedin, FaTwitter, FaLaptopCode, FaBrain, FaGraduationCap, FaDownload, FaRobot } from 'react-icons/fa';
 import Image from "next/image";
 import Link from 'next/link';
+import { 
+  FaGithub, 
+  FaLinkedin, 
+  FaTwitter, 
+  FaLaptopCode, 
+  FaBrain, 
+  FaGraduationCap, 
+  FaDownload, 
+  FaRobot 
+} from 'react-icons/fa';
 
 const AboutPage: React.FC = () => {
   return (
@@ -12,10 +21,30 @@ const AboutPage: React.FC = () => {
       {/* Navigation */}
       <nav className="flex flex-col sm:flex-row justify-between items-center p-3 sm:p-4 lg:p-6 max-w-7xl mx-auto gap-3 sm:gap-4 lg:gap-0">
         <div className="flex flex-wrap justify-center sm:justify-start space-x-3 sm:space-x-4 lg:space-x-6 text-xs sm:text-sm lg:text-base">
-          <Link href="/" className="hover:text-amber-400 transition-colors whitespace-nowrap px-1 py-1">Home</Link>
-          <Link href="/about" className="text-amber-400 border-b border-amber-400 whitespace-nowrap px-1 py-1">About</Link>
-          <Link href="/projects" className="hover:text-amber-400 transition-colors whitespace-nowrap px-1 py-1">Projects</Link>
-          <Link href="/contact" className="hover:text-amber-400 transition-colors whitespace-nowrap px-1 py-1">Contact</Link>
+          <Link 
+            href="/" 
+            className="hover:text-amber-400 transition-colors whitespace-nowrap px-1 py-1"
+          >
+            Home
+          </Link>
+          <Link 
+            href="/about" 
+            className="text-amber-400 border-b border-amber-400 whitespace-nowrap px-1 py-1"
+          >
+            About
+          </Link>
+          <Link 
+            href="/projects" 
+            className="hover:text-amber-400 transition-colors whitespace-nowrap px-1 py-1"
+          >
+            Projects
+          </Link>
+          <Link 
+            href="/contact" 
+            className="hover:text-amber-400 transition-colors whitespace-nowrap px-1 py-1"
+          >
+            Contact
+          </Link>
         </div>
         
         {/* Download CV Button */}
@@ -24,7 +53,8 @@ const AboutPage: React.FC = () => {
           download="Asharib_Shahid_CV.pdf"
           className="bg-amber-600 hover:bg-amber-500 text-white px-3 sm:px-4 lg:px-5 py-2 lg:py-2.5 rounded-md flex items-center transition-colors text-xs sm:text-sm lg:text-base whitespace-nowrap shadow-lg hover:shadow-xl"
         >
-          <FaDownload className="mr-1.5 sm:mr-2 text-xs sm:text-sm" /> Download CV
+          <FaDownload className="mr-1.5 sm:mr-2 text-xs sm:text-sm" /> 
+          Download CV
         </Link>
       </nav>
 
@@ -33,7 +63,7 @@ const AboutPage: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12 items-center">
           <div className="lg:col-span-2 order-2 lg:order-1">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 text-center lg:text-left leading-tight">
-              Hi, I'm <span className="text-amber-400">Asharib Shahid</span>
+              Hi, I&apos;m <span className="text-amber-400">Asharib Shahid</span>
             </h1>
             <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-4 sm:mb-6 font-light text-amber-200 text-center lg:text-left">
               Web Developer & Agentic AI Specialist
@@ -89,7 +119,9 @@ const AboutPage: React.FC = () => {
       <section className="py-8 sm:py-12 lg:py-16 px-3 sm:px-4 lg:px-6 bg-stone-800/50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-3 sm:mb-4">My Core Expertise</h2>
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-3 sm:mb-4">
+              My Core Expertise
+            </h2>
             <div className="w-16 sm:w-20 lg:w-24 h-1 bg-amber-400 mx-auto"></div>
           </div>
           
@@ -98,7 +130,9 @@ const AboutPage: React.FC = () => {
               <div className="text-amber-400 mb-3 sm:mb-4">
                 <FaLaptopCode className="text-2xl sm:text-3xl lg:text-4xl" />
               </div>
-              <h3 className="text-base sm:text-lg lg:text-xl font-bold mb-2 sm:mb-3">Full-Stack Web Development</h3>
+              <h3 className="text-base sm:text-lg lg:text-xl font-bold mb-2 sm:mb-3">
+                Full-Stack Web Development
+              </h3>
               <p className="text-amber-100/80 text-xs sm:text-sm lg:text-base leading-relaxed">
                 Building responsive, modern web applications using Next.js, React, 
                 TypeScript, and Tailwind CSS. Expertise in API integration and CMS 
@@ -110,7 +144,9 @@ const AboutPage: React.FC = () => {
               <div className="text-amber-400 mb-3 sm:mb-4">
                 <FaBrain className="text-2xl sm:text-3xl lg:text-4xl" />
               </div>
-              <h3 className="text-base sm:text-lg lg:text-xl font-bold mb-2 sm:mb-3">Agentic AI Solutions</h3>
+              <h3 className="text-base sm:text-lg lg:text-xl font-bold mb-2 sm:mb-3">
+                Agentic AI Solutions
+              </h3>
               <p className="text-amber-100/80 text-xs sm:text-sm lg:text-base leading-relaxed">
                 Developing AI-powered tools and productivity solutions using Python 
                 and prompt engineering. Creating intelligent systems that automate 
@@ -122,7 +158,9 @@ const AboutPage: React.FC = () => {
               <div className="text-amber-400 mb-3 sm:mb-4">
                 <FaGraduationCap className="text-2xl sm:text-3xl lg:text-4xl" />
               </div>
-              <h3 className="text-base sm:text-lg lg:text-xl font-bold mb-2 sm:mb-3">Continuous Learning</h3>
+              <h3 className="text-base sm:text-lg lg:text-xl font-bold mb-2 sm:mb-3">
+                Continuous Learning
+              </h3>
               <p className="text-amber-100/80 text-xs sm:text-sm lg:text-base leading-relaxed">
                 Committed to staying at the forefront of technology. Currently 
                 expanding knowledge in AGI, Web3, and advanced AI concepts through 
@@ -137,13 +175,19 @@ const AboutPage: React.FC = () => {
       <section className="py-8 sm:py-12 lg:py-16 px-3 sm:px-4 lg:px-6 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16">
           <div>
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 pb-2 border-b border-amber-400/30">Experience</h2>
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 pb-2 border-b border-amber-400/30">
+              Experience
+            </h2>
             
             <div className="space-y-6 sm:space-y-8">
               <div className="border-l-2 border-amber-400 pl-3 sm:pl-4 lg:pl-6 py-1 hover:bg-stone-800/20 transition-colors duration-300 rounded-r-lg">
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
-                  <h3 className="text-base sm:text-lg lg:text-xl font-bold">AI Automation Engineer</h3>
-                  <span className="bg-amber-400/10 text-amber-400 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm self-start">2025-Present</span>
+                  <h3 className="text-base sm:text-lg lg:text-xl font-bold">
+                    AI Automation Engineer
+                  </h3>
+                  <span className="bg-amber-400/10 text-amber-400 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm self-start">
+                    2025-Present
+                  </span>
                 </div>
                 <p className="text-amber-200/80 italic mb-2 text-xs sm:text-sm lg:text-base">
                   zApps Consulting
@@ -157,8 +201,12 @@ const AboutPage: React.FC = () => {
 
               <div className="border-l-2 border-amber-400 pl-3 sm:pl-4 lg:pl-6 py-1 hover:bg-stone-800/20 transition-colors duration-300 rounded-r-lg">
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
-                  <h3 className="text-base sm:text-lg lg:text-xl font-bold">Full Stack Developer</h3>
-                  <span className="bg-amber-400/10 text-amber-400 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm self-start">2025-Present</span>
+                  <h3 className="text-base sm:text-lg lg:text-xl font-bold">
+                    Full Stack Developer
+                  </h3>
+                  <span className="bg-amber-400/10 text-amber-400 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm self-start">
+                    2025-Present
+                  </span>
                 </div>
                 <p className="text-amber-200/80 italic mb-2 text-xs sm:text-sm lg:text-base">
                   Freelance
@@ -171,10 +219,16 @@ const AboutPage: React.FC = () => {
               
               <div className="border-l-2 border-amber-400 pl-3 sm:pl-4 lg:pl-6 py-1 hover:bg-stone-800/20 transition-colors duration-300 rounded-r-lg">
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
-                  <h3 className="text-base sm:text-lg lg:text-xl font-bold">AI Agent Developer</h3>
-                  <span className="bg-amber-400/10 text-amber-400 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm self-start">Jan 2025-Present</span>
+                  <h3 className="text-base sm:text-lg lg:text-xl font-bold">
+                    AI Agent Developer
+                  </h3>
+                  <span className="bg-amber-400/10 text-amber-400 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm self-start">
+                    Jan 2025-Present
+                  </span>
                 </div>
-                <p className="text-amber-200/80 italic mb-2 text-xs sm:text-sm lg:text-base">Self Project | For SaaS</p>
+                <p className="text-amber-200/80 italic mb-2 text-xs sm:text-sm lg:text-base">
+                  Self Project | For SaaS
+                </p>
                 <p className="text-amber-100/80 text-xs sm:text-sm lg:text-base leading-relaxed">
                   Fully Autonomous AI HR Agent that can grab attendance by scanning faces, call employees at home 
                   and talk in local language, calculate salary and transfer payments to bank accounts upon employee confirmation.
@@ -183,10 +237,16 @@ const AboutPage: React.FC = () => {
               
               <div className="border-l-2 border-amber-400 pl-3 sm:pl-4 lg:pl-6 py-1 hover:bg-stone-800/20 transition-colors duration-300 rounded-r-lg">
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
-                  <h3 className="text-base sm:text-lg lg:text-xl font-bold">Hackathon Participant</h3>
-                  <span className="bg-amber-400/10 text-amber-400 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm self-start">2025</span>
+                  <h3 className="text-base sm:text-lg lg:text-xl font-bold">
+                    Hackathon Participant
+                  </h3>
+                  <span className="bg-amber-400/10 text-amber-400 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm self-start">
+                    2025
+                  </span>
                 </div>
-                <p className="text-amber-200/80 italic mb-2 text-xs sm:text-sm lg:text-base">GIAIC Hackathon, Karachi</p>
+                <p className="text-amber-200/80 italic mb-2 text-xs sm:text-sm lg:text-base">
+                  GIAIC Hackathon, Karachi
+                </p>
                 <p className="text-amber-100/80 text-xs sm:text-sm lg:text-base leading-relaxed">
                   Built a functional e-commerce site in 48 hours using Next.js, 
                   Tailwind CSS, and Sanity CMS.
@@ -196,53 +256,76 @@ const AboutPage: React.FC = () => {
           </div>
           
           <div>
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 pb-2 border-b border-amber-400/30">Education</h2>
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 pb-2 border-b border-amber-400/30">
+              Education
+            </h2>
             
             <div className="space-y-6 sm:space-y-8">
               <div className="border-l-2 border-amber-400 pl-3 sm:pl-4 lg:pl-6 py-1 hover:bg-stone-800/20 transition-colors duration-300 rounded-r-lg">
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
-                  <h3 className="text-base sm:text-lg lg:text-xl font-bold">Web & Agentic AI Engineering</h3>
-                  <span className="bg-amber-400/10 text-amber-400 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm self-start">2023-2025</span>
+                  <h3 className="text-base sm:text-lg lg:text-xl font-bold">
+                    Web & Agentic AI Engineering
+                  </h3>
+                  <span className="bg-amber-400/10 text-amber-400 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm self-start">
+                    2023-2025
+                  </span>
                 </div>
-                <p className="text-amber-200/80 italic mb-2 text-xs sm:text-sm lg:text-base">GIAIC - Karachi</p>
+                <p className="text-amber-200/80 italic mb-2 text-xs sm:text-sm lg:text-base">
+                  GIAIC - Karachi
+                </p>
                 <p className="text-amber-100/80 text-xs sm:text-sm lg:text-base leading-relaxed">
-                  Focus: AI, Python, Web Development, AGI (Governor's Initiative for AI & Computing)
+                  Focus: AI, Python, Web Development, AGI (Governor&apos;s Initiative for AI & Computing)
                 </p>
               </div>
               
               <div className="border-l-2 border-amber-400 pl-3 sm:pl-4 lg:pl-6 py-1 hover:bg-stone-800/20 transition-colors duration-300 rounded-r-lg">
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
-                  <h3 className="text-base sm:text-lg lg:text-xl font-bold">Intermediate 1st Year</h3>
-                  <span className="bg-amber-400/10 text-amber-400 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm self-start">2025</span>
+                  <h3 className="text-base sm:text-lg lg:text-xl font-bold">
+                    Intermediate 1st Year
+                  </h3>
+                  <span className="bg-amber-400/10 text-amber-400 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm self-start">
+                    2025
+                  </span>
                 </div>
-                <p className="text-amber-200/80 italic mb-2 text-xs sm:text-sm lg:text-base">Private College - Karachi</p>
-                <p className="text-amber-100/80 text-xs sm:text-sm lg:text-base leading-relaxed">Field: Computer Science</p>
+                <p className="text-amber-200/80 italic mb-2 text-xs sm:text-sm lg:text-base">
+                  Private College - Karachi
+                </p>
+                <p className="text-amber-100/80 text-xs sm:text-sm lg:text-base leading-relaxed">
+                  Field: Computer Science
+                </p>
               </div>
               
               <div className="border-l-2 border-amber-400 pl-3 sm:pl-4 lg:pl-6 py-1 hover:bg-stone-800/20 transition-colors duration-300 rounded-r-lg">
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
-                  <h3 className="text-base sm:text-lg lg:text-xl font-bold">Hafiz Al Quran</h3>
-                  <span className="bg-amber-400/10 text-amber-400 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm self-start">2023</span>
+                  <h3 className="text-base sm:text-lg lg:text-xl font-bold">
+                    Hafiz Al Quran
+                  </h3>
+                  <span className="bg-amber-400/10 text-amber-400 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm self-start">
+                    2023
+                  </span>
                 </div>
-                <p className="text-amber-200/80 italic mb-2 text-xs sm:text-sm lg:text-base">Taneem al Madaris - Karachi Pak</p>
+                <p className="text-amber-200/80 italic mb-2 text-xs sm:text-sm lg:text-base">
+                  Taneem al Madaris - Karachi Pak
+                </p>
               </div>
             </div>
             
             <div className="mt-8 sm:mt-10 lg:mt-12">
-              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 pb-2 border-b border-amber-400/30">Technical Skills</h2>
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 pb-2 border-b border-amber-400/30">
+                Technical Skills
+              </h2>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 lg:gap-4">
-                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">Next.js</div>
-                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">React.js</div>
-                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">TypeScript</div>
-                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">Python</div>
-                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">OpenAI API</div>
-                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">Gemini API</div>
-                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">Agentic AI</div>
-                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">Automation</div>
-                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">Tailwind CSS</div>
-                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">API Integration</div>
-                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">Sanity CMS</div>
-                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">AI Agents</div>
+                {[
+                  'Next.js', 'React.js', 'TypeScript', 'Python', 'OpenAI API', 'Gemini API',
+                  'Agentic AI', 'Automation', 'Tailwind CSS', 'API Integration', 'Sanity CMS', 'AI Agents'
+                ].map((skill) => (
+                  <div 
+                    key={skill}
+                    className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300"
+                  >
+                    {skill}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -257,7 +340,7 @@ const AboutPage: React.FC = () => {
           </h2>
           <p className="text-sm sm:text-base lg:text-lg mb-6 sm:mb-8 lg:mb-10 max-w-2xl mx-auto text-amber-100/80 leading-relaxed">
             Whether you need a cutting-edge web application or AI-powered automation solutions, 
-            I'm ready to bring your ideas to life. Let's create something amazing together.
+            I&apos;m ready to bring your ideas to life. Let&apos;s create something amazing together.
           </p>
           <Link 
             href="/contact" 
@@ -280,16 +363,36 @@ const AboutPage: React.FC = () => {
             </p>
           </div>
           <div className="flex space-x-3 sm:space-x-4 lg:space-x-6">
-            <Link href="https://github.com/asharibshahid" target="_blank" rel="noopener noreferrer" className="text-amber-100/60 hover:text-amber-400 transition-colors duration-300">
+            <Link 
+              href="https://github.com/asharibshahid" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-amber-100/60 hover:text-amber-400 transition-colors duration-300"
+            >
               <FaGithub className="text-base sm:text-lg lg:text-xl" />
             </Link>
-            <Link href="https://linkedin.com/in/asharib-shahid-/" target="_blank" rel="noopener noreferrer" className="text-amber-100/60 hover:text-amber-400 transition-colors duration-300">
+            <Link 
+              href="https://linkedin.com/in/asharib-shahid-/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-amber-100/60 hover:text-amber-400 transition-colors duration-300"
+            >
               <FaLinkedin className="text-base sm:text-lg lg:text-xl" />
             </Link>
-            <Link href="https://x.com/AsharibSheikh01" target="_blank" rel="noopener noreferrer" className="text-amber-100/60 hover:text-amber-400 transition-colors duration-300">
+            <Link 
+              href="https://x.com/AsharibSheikh01" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-amber-100/60 hover:text-amber-400 transition-colors duration-300"
+            >
               <FaTwitter className="text-base sm:text-lg lg:text-xl" />
             </Link>
-            <Link href="https://asharib.vercel.app" target="_blank" rel="noopener noreferrer" className="text-amber-100/60 hover:text-amber-400 transition-colors duration-300">
+            <Link 
+              href="https://asharib.vercel.app" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-amber-100/60 hover:text-amber-400 transition-colors duration-300"
+            >
               <FaLaptopCode className="text-base sm:text-lg lg:text-xl" />
             </Link>
           </div>
