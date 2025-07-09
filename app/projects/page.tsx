@@ -220,8 +220,7 @@ const Page = () => {
     {
       id: 17,
       title: "Auto Lead Generator Agent",
-      description: "Extract verified  business leads in 30 seconds 
-Direct from Google Maps & LinkedIn - no more guesswork ",
+      description: "Extract verified  business leads in 30 seconds Direct from Google Maps  LinkedIn no more guesswork ",
       tech: ["AgentSdk", "GeminiApi", "Serper", "streamlit"],
       category: "ai",
       link: "https://99098989zzz.streamlit.app/",
@@ -232,7 +231,7 @@ Direct from Google Maps & LinkedIn - no more guesswork ",
     },
   {
       id: 18,
-      title: "Email Automation: SEND : READ : ETC",
+      title: " Email Automation SEND , READ,  ETC",
       description: "Ai Agent Email Automation Which Can Read Your Inbox Which Can Auto Ai Reply To You Sender and more... ",
       tech: ["AgentSdk", "GeminiApi", "GoogleCloud", "Gmail"],
       category: "ai",
