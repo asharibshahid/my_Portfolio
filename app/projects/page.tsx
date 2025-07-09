@@ -236,7 +236,7 @@ const Page = () => {
       tech: ["AgentSdk", "GeminiApi", "GoogleCloud", "Gmail"],
       category: "ai",
       link: "https://github.com/asharibshahid/Learn_Agentic_Together",
-      github: "https://github.com/asharibshahid/Email_Automation_Agent,
+      github: "https://github.com/asharibshahid/Email_Automation_Agent",
       featured: true,
       year: "2025",
       status: "Completed"
