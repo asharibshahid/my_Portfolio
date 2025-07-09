@@ -1,289 +1,305 @@
-// app/about/page.js
-import { FaGithub, FaLinkedin, FaTwitter, FaLaptopCode, FaBrain, FaGraduationCap, FaDownload } from 'react-icons/fa';
-import Image from "next/image"
+"use client"
+import React, { useState, useEffect, useRef } from 'react';
+import { ChevronDown, Github, Linkedin, Twitter, Mail, Code, Brain, Globe, Zap, Menu, X } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 
-const AboutPage = () => {
+const Portfolio = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [currentSkill, setCurrentSkill] = useState(0);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  const skills = [
+    "Full-Stack Developer",
+    "Agentic ai Engineer", 
+    "Next.js Expert",
+    "Python Developer",
+    "Hafiz-e-Quran"
+  ];
+
+  const techStack = [
+    { name: "Next.js", color: "bg-black text-white" },
+    { name: "React", color: "bg-blue-500 text-white" },
+    { name: "TypeScript", color: "bg-blue-600 text-white" },
+    { name: "Python", color: "bg-yellow-500 text-black" },
+    { name: "Agentic Ai", color: "bg-purple-600 text-white" },
+    { name: "Tailwind", color: "bg-cyan-500 text-white" }
+  ];
+
+  useEffect(() => {
+    setIsLoaded(true);
+    const interval = setInterval(() => {
+      setCurrentSkill((prev) => (prev + 1) % skills.length);
+    }, 3000);
+    
+    // Close menu when clicking outside
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsMenuOpen(false);
+      }
+    };
+    
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      clearInterval(interval);
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  const scrollToSection = () => {
+    window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-stone-900 to-stone-800 text-amber-50">
-      {/* Navigation */}
-      <nav className="flex flex-col sm:flex-row justify-between items-center p-4 sm:p-6 max-w-6xl mx-auto gap-4 sm:gap-0">
-        <div className="flex flex-wrap justify-center sm:justify-start space-x-4 sm:space-x-6 text-sm sm:text-base">
-          <Link href="/" className="hover:text-amber-400 transition-colors whitespace-nowrap">Home</Link>
-          <Link href="/about" className="text-amber-400 border-b border-amber-400 whitespace-nowrap">About</Link>
-          <Link href="/projects" className="hover:text-amber-400 transition-colors whitespace-nowrap">Projects</Link>
-          <Link href="/contact" className="hover:text-amber-400 transition-colors whitespace-nowrap">Contact</Link>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden">
+      {/* Animated Background */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-cyan-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-pulse delay-2000"></div>
+      </div>
+
+      {/* Responsive Navbar */}
+      <nav className={`fixed top-0 w-full z-50 transition-all duration-1000 ${isLoaded ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}`}>
+        <div className="backdrop-blur-md bg-white/5 border-b border-white/10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between items-center py-4">
+              <div className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+                Asharib
+              </div>
+              
+              {/* Mobile Menu Button */}
+              <button 
+                className="md:hidden text-gray-300 focus:outline-none z-60"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+              >
+                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+              
+              {/* Desktop Navigation */}
+              <div className="hidden md:flex space-x-6">
+                <Link href="/" className="text-gray-300 hover:text-white transition-colors duration-300">Home</Link>
+                <Link href="/projects" className="text-gray-300 hover:text-white transition-colors duration-300">Work</Link>
+                <Link href="/about" className="text-gray-300 hover:text-white transition-colors duration-300">About</Link>
+                <Link href="/contact" className="text-gray-300 hover:text-white transition-colors duration-300">Contact</Link>
+              </div>
+              
+              <div className="hidden md:flex space-x-4">
+                <a href="https://github.com/asharibshahid" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-300 hover:scale-110 transform">
+                  <Github size={20} />
+                </a>
+                <a href="https://www.linkedin.com/in/asharib-shahid-/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-300 hover:scale-110 transform">
+                  <Linkedin size={20} />
+                </a>
+                <a href="https://x.com/AsharibSheikh01" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-300 hover:scale-110 transform">
+                  <Twitter size={20} />
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
         
-        {/* Download CV Button */}
-        <Link 
-          href="/CV.pdf" 
-          download="Asharib_Shahid_CV.pdf"
-          className="bg-amber-600 hover:bg-amber-500 text-white px-4 py-2 rounded-md flex items-center transition-colors text-sm sm:text-base whitespace-nowrap"
+        {/* Mobile Menu */}
+        <div 
+          ref={menuRef}
+          className={`fixed top-0 left-0 w-full h-screen bg-slate-900/95 backdrop-blur-lg z-40 md:hidden pt-16 transition-all duration-300 ${isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}`}
         >
-          <FaDownload className="mr-2" /> Download CV
-        </Link>
+          <div className="flex flex-col items-center space-y-8 py-10">
+            <Link 
+              href="/" 
+              className="text-2xl text-gray-300 hover:text-white transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Home
+            </Link>
+            <Link 
+              href="/projects" 
+              className="text-2xl text-gray-300 hover:text-white transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Work
+            </Link>
+            <Link 
+              href="/about" 
+              className="text-2xl text-gray-300 hover:text-white transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              About
+            </Link>
+            <Link 
+              href="/contact" 
+              className="text-2xl text-gray-300 hover:text-white transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Contact
+            </Link>
+            
+            <div className="flex space-x-6 pt-8">
+              <a href="https://github.com/asharibshahid" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-300 hover:scale-110 transform">
+                <Github size={28} />
+              </a>
+              <a href="https://www.linkedin.com/in/asharib-shahid-/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-300 hover:scale-110 transform">
+                <Linkedin size={28} />
+              </a>
+              <a href="https://x.com/AsharibSheikh01" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-300 hover:scale-110 transform">
+                <Twitter size={28} />
+              </a>
+            </div>
+          </div>
+        </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="py-8 sm:py-16 px-4 sm:px-6 max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-12 items-center">
-          <div className="lg:col-span-2 order-2 lg:order-1">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-center lg:text-left">
-              Hi, I'm <span className="text-amber-400">Asharib Shahid</span>
-            </h1>
-            <h2 className="text-xl sm:text-2xl md:text-3xl mb-6 font-light text-amber-200 text-center lg:text-left">
-              Web Developer & Agentic AI Specialist
-            </h2>
-            <p className="text-base sm:text-lg mb-8 max-w-2xl leading-relaxed text-center lg:text-left mx-auto lg:mx-0">
-              A 17 y/o self-driven and tech-savvy student with a passion for modern web development 
-              and Artificial Intelligence. I specialize in building full-stack web applications 
-              and integrating AI to create future-forward digital solutions.
-            </p>
-            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 items-center lg:items-start">
-              <Link 
-                href="https://github.com/asharibshahid" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="bg-amber-700 hover:bg-amber-600 text-white px-6 py-3 rounded-md flex items-center transition-colors w-full sm:w-auto justify-center"
-              >
-                <FaGithub className="mr-2" /> GitHub
-              </Link>
-              <Link
-                href="https://linkedin.com/in/asharib-shahid-/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="border border-amber-400 text-amber-400 hover:bg-amber-400/10 px-6 py-3 rounded-md flex items-center transition-colors w-full sm:w-auto justify-center"
-              >
-                <FaLinkedin className="mr-2" /> LinkedIn
-              </Link>
-            </div>
-          </div>
-          <div className="flex justify-center order-1 lg:order-2">
-            <div className="relative">
-              <div className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 bg-amber-400/10 rounded-full overflow-hidden border-4 border-amber-400/30">
+      <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-24 pb-32 md:pt-0 md:pb-0">
+        <div className="max-w-6xl mx-auto text-center">
+          {/* Profile Image */}
+          <div className={`mb-8 transition-all duration-1500 delay-300 ${isLoaded ? 'scale-100 opacity-100' : 'scale-50 opacity-0'}`}>
+            <div className="relative mx-auto w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56">
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-400 via-cyan-400 to-blue-400 rounded-full animate-spin-slow opacity-75"></div>
+              <div className="absolute inset-2 bg-slate-800 rounded-full flex items-center justify-center">
                 <Image
-                  src="/pfp2.jpeg"
+                  src="/pfp.jpeg"
                   alt="Asharib Shahid"
                   className="rounded-full object-cover w-full h-full"
-                  width={256}
-                  height={256}
+                  width={200}
+                  height={200}
+                  priority
                 />
               </div>
-              <div className="absolute -bottom-2 sm:-bottom-4 -right-2 sm:-right-4 bg-stone-800 px-2 sm:px-4 py-1 sm:py-2 rounded-full border border-amber-400">
-                <span className="text-amber-400 font-bold text-xs sm:text-sm">Agentic AI Enthusiast</span>
-              </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Core Expertise */}
-      <section className="py-8 sm:py-16 px-4 sm:px-6 bg-stone-800/50">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-8 sm:mb-16">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4">My Core Expertise</h2>
-            <div className="w-24 h-1 bg-amber-400 mx-auto"></div>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            <div className="bg-stone-800/70 p-6 sm:p-8 rounded-xl border border-stone-700 hover:border-amber-400/30 transition-all">
-              <div className="text-amber-400 mb-4">
-                <FaLaptopCode className="text-3xl sm:text-4xl" />
-              </div>
-              <h3 className="text-lg sm:text-xl font-bold mb-3">Full-Stack Web Development</h3>
-              <p className="text-amber-100/80 text-sm sm:text-base">
-                Building responsive, modern web applications using Next.js, React, 
-                TypeScript, and Tailwind CSS. Expertise in API integration and CMS 
-                solutions like Sanity.
-              </p>
+          {/* Name and Title */}
+          <div className={`mb-6 transition-all duration-1500 delay-500 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 bg-gradient-to-r from-white via-purple-200 to-cyan-200 bg-clip-text text-transparent">
+              Asharib Shahid
+            </h1>
+            <div className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-4">
+              <span className="inline-block bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent font-semibold"> WEB </span>
+              <span className="inline-block"> & </span>
+              <span className="inline-block bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent font-semibold">Agentic AI Developer</span>
             </div>
-            
-            <div className="bg-stone-800/70 p-6 sm:p-8 rounded-xl border border-stone-700 hover:border-amber-400/30 transition-all">
-              <div className="text-amber-400 mb-4">
-                <FaBrain className="text-3xl sm:text-4xl" />
-              </div>
-              <h3 className="text-lg sm:text-xl font-bold mb-3">Agentic AI Solutions</h3>
-              <p className="text-amber-100/80 text-sm sm:text-base">
-                Developing AI-powered tools and productivity solutions using Python 
-                and prompt engineering. Creating intelligent systems that automate 
-                complex workflows.
-              </p>
-            </div>
-            
-            <div className="bg-stone-800/70 p-6 sm:p-8 rounded-xl border border-stone-700 hover:border-amber-400/30 transition-all md:col-span-2 lg:col-span-1">
-              <div className="text-amber-400 mb-4">
-                <FaGraduationCap className="text-3xl sm:text-4xl" />
-              </div>
-              <h3 className="text-lg sm:text-xl font-bold mb-3">Continuous Learning</h3>
-              <p className="text-amber-100/80 text-sm sm:text-base">
-                Committed to staying at the forefront of technology. Currently 
-                expanding knowledge in AGI, Web3, and advanced AI concepts through 
-                formal education and self-driven projects.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Experience & Education */}
-      <section className="py-8 sm:py-16 px-4 sm:px-6 max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16">
-          <div>
-            <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 pb-2 border-b border-amber-400/30">Experience</h2>
-              <div className="space-y-6 sm:space-y-8">
-              <div className="border-l-2 border-amber-400 pl-4 sm:pl-6 py-1">
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
-                  <h3 className="text-lg sm:text-xl font-bold">Ai Automation Eng</h3>
-                  <span className="bg-amber-400/10 text-amber-400 px-3 py-1 rounded-full text-sm self-start">2025-Present</span>
-                </div>
-                <p className="text-amber-200/80 italic mb-2 text-sm sm:text-base">
-                  Onsite
-                </p>
-                <p className="text-amber-100/80 text-sm sm:text-base">
-                  Developed multiple Ai Agents That Can Automate The work Like I've Build COLD Caling Agents And thats Type of More ...Working On Custom OPenAI AGent, N8n ,Zapier , Buit With Code Too ...
-                </p>
-              </div>
-            <div className="space-y-6 sm:space-y-8">
-              <div className="border-l-2 border-amber-400 pl-4 sm:pl-6 py-1">
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
-                  <h3 className="text-lg sm:text-xl font-bold">Full Stack Developer</h3>
-                  <span className="bg-amber-400/10 text-amber-400 px-3 py-1 rounded-full text-sm self-start">2025-Present</span>
-                </div>
-                <p className="text-amber-200/80 italic mb-2 text-sm sm:text-base">
-                  Freelance
-                </p>
-                <p className="text-amber-100/80 text-sm sm:text-base">
-                  Developed multiple responsive web applications using Next.js, TypeScript, 
-                  and integrated APIs with CMS and Web3Form solutions for international clients.
-                </p>
-              </div>
-              
-              <div className="border-l-2 border-amber-400 pl-4 sm:pl-6 py-1">
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
-                  <h3 className="text-lg sm:text-xl font-bold">AI Agent Developer</h3>
-                  <span className="bg-amber-400/10 text-amber-400 px-3 py-1 rounded-full text-sm self-start">Jan 2025-Present</span>
-                </div>
-                <p className="text-amber-200/80 italic mb-2 text-sm sm:text-base">Self Project | For SaaS</p>
-                <p className="text-amber-100/80 text-sm sm:text-base">
-                  Fully Autonomous AI HR Agent that can grab attendance by scanning faces, call employees at home 
-                  and talk in local language, calculate salary and transfer payments to bank accounts upon employee confirmation.
-                </p>
-              </div>
-              
-              <div className="border-l-2 border-amber-400 pl-4 sm:pl-6 py-1">
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
-                  <h3 className="text-lg sm:text-xl font-bold">Hackathon Participant</h3>
-                  <span className="bg-amber-400/10 text-amber-400 px-3 py-1 rounded-full text-sm self-start">2025</span>
-                </div>
-                <p className="text-amber-200/80 italic mb-2 text-sm sm:text-base">GIAIC Hackathon, Karachi</p>
-                <p className="text-amber-100/80 text-sm sm:text-base">
-                  Built a functional e-commerce site in 48 hours using Next.js, 
-                  Tailwind CSS, and Sanity CMS.
-                </p>
-              </div>
-            </div>
-          </div>
-          
-          <div>
-            <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 pb-2 border-b border-amber-400/30">Education</h2>
-            
-            <div className="space-y-6 sm:space-y-8">
-              <div className="border-l-2 border-amber-400 pl-4 sm:pl-6 py-1">
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
-                  <h3 className="text-lg sm:text-xl font-bold">Web & Agentic AI Engineering</h3>
-                  <span className="bg-amber-400/10 text-amber-400 px-3 py-1 rounded-full text-sm self-start">2023-2025</span>
-                </div>
-                <p className="text-amber-200/80 italic mb-2 text-sm sm:text-base">GIAIC - Karachi</p>
-                <p className="text-amber-100/80 text-sm sm:text-base">
-                  Focus: AI, Python, Web Development, AGI (Governor's Initiative for AI & Computing)
-                </p>
-              </div>
-              
-              <div className="border-l-2 border-amber-400 pl-4 sm:pl-6 py-1">
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
-                  <h3 className="text-lg sm:text-xl font-bold">Intermediate 1st Year</h3>
-                  <span className="bg-amber-400/10 text-amber-400 px-3 py-1 rounded-full text-sm self-start">2025</span>
-                </div>
-                <p className="text-amber-200/80 italic mb-2 text-sm sm:text-base">Private College - Karachi</p>
-                <p className="text-amber-100/80 text-sm sm:text-base">Field: Computer Science</p>
-              </div>
-              
-              <div className="border-l-2 border-amber-400 pl-4 sm:pl-6 py-1">
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
-                  <h3 className="text-lg sm:text-xl font-bold">Hafiz Al Quran</h3>
-                  <span className="bg-amber-400/10 text-amber-400 px-3 py-1 rounded-full text-sm self-start">2023</span>
-                </div>
-                <p className="text-amber-200/80 italic mb-2 text-sm sm:text-base">Taneem al Madaris - Karachi Pak</p>
-              </div>
-            </div>
-            
-            <div className="mt-8 sm:mt-12">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 pb-2 border-b border-amber-400/30">Technical Skills</h2>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
-                <div className="bg-stone-800/70 py-2 px-3 sm:px-4 rounded text-center text-sm sm:text-base">Next.js</div>
-                <div className="bg-stone-800/70 py-2 px-3 sm:px-4 rounded text-center text-sm sm:text-base">React.js</div>
-                <div className="bg-stone-800/70 py-2 px-3 sm:px-4 rounded text-center text-sm sm:text-base">TypeScript</div>
-                <div className="bg-stone-800/70 py-2 px-3 sm:px-4 rounded text-center text-sm sm:text-base">Python</div>
-                <div className="bg-stone-800/70 py-2 px-3 sm:px-4 rounded text-center text-sm sm:text-base">Agentic AI</div>
-                <div className="bg-stone-800/70 py-2 px-3 sm:px-4 rounded text-center text-sm sm:text-base">Prompt Engineering</div>
-                <div className="bg-stone-800/70 py-2 px-3 sm:px-4 rounded text-center text-sm sm:text-base">Tailwind CSS</div>
-                <div className="bg-stone-800/70 py-2 px-3 sm:px-4 rounded text-center text-sm sm:text-base">API Integration</div>
-                <div className="bg-stone-800/70 py-2 px-3 sm:px-4 rounded text-center text-sm sm:text-base">Sanity CMS</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-12 sm:py-20 px-4 sm:px-6 bg-gradient-to-r from-stone-800 to-stone-900">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
-            Interested in Working Together?
-          </h2>
-          <p className="text-base sm:text-lg mb-8 sm:mb-10 max-w-2xl mx-auto text-amber-100/80">
-            Whether you need a cutting-edge web application or AI-powered solutions, 
-            I'm ready to bring your ideas to life. Let's create something amazing.
-          </p>
-          <Link 
-            href="/contact" 
-            className="inline-block bg-amber-400 text-stone-900 font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-md hover:bg-amber-300 transition-colors text-sm sm:text-base"
-          >
-            Get In Touch
-          </Link>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="py-6 sm:py-8 px-4 sm:px-6 border-t border-stone-700">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="text-center md:text-left">
-            <div className="text-lg sm:text-xl font-bold">
-              <span className="text-amber-400">A</span>SHARIB SHAHID
-            </div>
-            <p className="text-amber-100/60 text-xs sm:text-sm mt-1">
-              Web Developer & Agentic AI Specialist
+            <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed px-4">
+              Building AI-powered futures with modern web technologies while staying rooted in Islamic values
             </p>
           </div>
-          <div className="flex space-x-4 sm:space-x-6">
-            <Link href="https://github.com/asharibshahid" target="_blank" rel="noopener noreferrer" className="text-amber-100/60 hover:text-amber-400 transition-colors">
-              <FaGithub className="text-lg sm:text-xl" />
-            </Link>
-            <Link href="https://linkedin.com/in/asharib-shahid-/" target="_blank" rel="noopener noreferrer" className="text-amber-100/60 hover:text-amber-400 transition-colors">
-              <FaLinkedin className="text-lg sm:text-xl" />
-            </Link>
-            <Link href="https://x.com/AsharibSheikh01" target="_blank" rel="noopener noreferrer" className="text-amber-100/60 hover:text-amber-400 transition-colors">
-              <FaTwitter className="text-lg sm:text-xl" />
-            </Link>
-            <Link href="https://asharib.vercel.app" target="_blank" rel="noopener noreferrer" className="text-amber-100/60 hover:text-amber-400 transition-colors">
-              <FaLaptopCode className="text-lg sm:text-xl" />
-            </Link>
+
+          {/* Animated Skills */}
+          <div className={`mb-8 transition-all duration-1500 delay-700 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+            <div className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4">
+              <span className="text-gray-300">I'm a </span>
+              <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent transition-all duration-500">
+                {skills[currentSkill]}
+              </span>
+            </div>
+          </div>
+
+          {/* Tech Stack Badges */}
+          <div className={`mb-12 transition-all duration-1500 delay-900 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-3 max-w-2xl mx-auto px-2">
+              {techStack.map((tech, index) => (
+                <span
+                  key={tech.name}
+                  className={`px-3 py-1.5 text-xs sm:text-sm md:px-4 md:py-2 md:text-base rounded-full font-medium transition-all duration-300 hover:scale-110 hover:shadow-lg ${tech.color}`}
+                >
+                  {tech.name}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* CTA Buttons */}
+          <div className={`mb-16 transition-all duration-1500 delay-1100 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/projects">
+                <button className="group relative w-full sm:w-auto px-6 py-3 md:px-8 md:py-4 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-full font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25">
+                  <span className="relative z-10 flex items-center justify-center">
+                    <Code className="mr-2" size={18} />
+                    View Projects
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-cyan-700 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </button>
+              </Link>
+              <Link href="/contact">
+                <button className="group w-full sm:w-auto px-6 py-3 md:px-8 md:py-4 border-2 border-purple-400 rounded-full font-semibold text-purple-400 hover:bg-purple-400 hover:text-white transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                  <span className="flex items-center justify-center">
+                    <Mail className="mr-2" size={18} />
+                    Contact Me
+                  </span>
+                </button>
+              </Link>
+            </div>
+          </div>
+
+          {/* Quick Stats */}
+          <div className={`mb-16 transition-all duration-1500 delay-1300 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 max-w-4xl mx-auto px-4">
+              <div className="text-center group hover:scale-105 transition-transform duration-300 p-3 bg-slate-800/30 rounded-xl">
+                <div className="text-2xl sm:text-3xl font-bold text-purple-400 mb-1 sm:mb-2">15+</div>
+                <div className="text-sm sm:text-base text-gray-400">Projects</div>
+              </div>
+              <div className="text-center group hover:scale-105 transition-transform duration-300 p-3 bg-slate-800/30 rounded-xl">
+                <div className="text-2xl sm:text-3xl font-bold text-cyan-400 mb-1 sm:mb-2">2023</div>
+                <div className="text-sm sm:text-base text-gray-400">Started Coding</div>
+              </div>
+              <div className="text-center group hover:scale-105 transition-transform duration-300 p-3 bg-slate-800/30 rounded-xl">
+                <div className="text-2xl sm:text-3xl font-bold text-yellow-400 mb-1 sm:mb-2">Q4</div>
+                <div className="text-sm sm:text-base text-gray-400">GIAIC Graduate</div>
+              </div>
+              <div className="text-center group hover:scale-105 transition-transform duration-300 p-3 bg-slate-800/30 rounded-xl">
+                <div className="text-2xl sm:text-3xl font-bold text-green-400 mb-1 sm:mb-2">AI Agent</div>
+                <div className="text-sm sm:text-base text-gray-400">Specialized</div>
+              </div>
+            </div>
           </div>
         </div>
-      </footer>
+
+        {/* Scroll Indicator */}
+        <div className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 transition-all duration-2000 delay-1500 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+          <button 
+            onClick={scrollToSection}
+            className="flex flex-col items-center text-gray-400 hover:text-white transition-colors duration-300 group"
+          >
+            <span className="text-sm mb-2">Scroll to explore</span>
+            <ChevronDown className="animate-bounce group-hover:scale-110 transition-transform duration-300" size={24} />
+          </button>
+        </div>
+      </section>
+
+      {/* Floating Elements */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden">
+        <div className="hidden sm:block absolute top-1/4 left-10 opacity-20">
+          <Brain className="text-purple-400 animate-pulse" size={32} />
+        </div>
+        <div className="hidden sm:block absolute top-1/3 right-10 opacity-20">
+          <Globe className="text-cyan-400 animate-pulse delay-1000" size={28} />
+        </div>
+        <div className="hidden sm:block absolute bottom-1/4 left-20 opacity-20">
+          <Zap className="text-yellow-400 animate-pulse delay-2000" size={24} />
+        </div>
+        <div className="hidden sm:block absolute top-1/2 right-20 opacity-20">
+          <Code className="text-green-400 animate-pulse delay-3000" size={30} />
+        </div>
+      </div>
+
+      <style jsx>{`
+        @keyframes spin-slow {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        .animate-spin-slow {
+          animation: spin-slow 8s linear infinite;
+        }
+        
+        /* Prevent horizontal scrolling */
+        html, body {
+          overflow-x: hidden;
+        }
+      `}</style>
     </div>
   );
 };
 
-export default AboutPage;
+export default Portfolio;
