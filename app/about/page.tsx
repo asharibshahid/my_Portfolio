@@ -1,8 +1,7 @@
-// app/about/page.tsx
 'use client';
 
 import React from 'react';
-import Image from "next/image";
+import Image from 'next/image';
 import Link from 'next/link';
 import { 
   FaGithub, 
@@ -18,7 +17,6 @@ import {
 const AboutPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-stone-900 to-stone-800 text-amber-50">
-      {/* Navigation */}
       <nav className="flex flex-col sm:flex-row justify-between items-center p-3 sm:p-4 lg:p-6 max-w-7xl mx-auto gap-3 sm:gap-4 lg:gap-0">
         <div className="flex flex-wrap justify-center sm:justify-start space-x-3 sm:space-x-4 lg:space-x-6 text-xs sm:text-sm lg:text-base">
           <Link 
@@ -47,7 +45,6 @@ const AboutPage: React.FC = () => {
           </Link>
         </div>
         
-        {/* Download CV Button */}
         <Link 
           href="/CV.pdf" 
           download="Asharib_Shahid_CV.pdf"
@@ -58,7 +55,6 @@ const AboutPage: React.FC = () => {
         </Link>
       </nav>
 
-      {/* Hero Section */}
       <section className="py-6 sm:py-12 lg:py-16 px-3 sm:px-4 lg:px-6 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12 items-center">
           <div className="lg:col-span-2 order-2 lg:order-1">
@@ -115,7 +111,6 @@ const AboutPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Core Expertise */}
       <section className="py-8 sm:py-12 lg:py-16 px-3 sm:px-4 lg:px-6 bg-stone-800/50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8 sm:mb-12 lg:mb-16">
@@ -171,7 +166,6 @@ const AboutPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Experience & Education */}
       <section className="py-8 sm:py-12 lg:py-16 px-3 sm:px-4 lg:px-6 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16">
           <div>
@@ -315,24 +309,48 @@ const AboutPage: React.FC = () => {
                 Technical Skills
               </h2>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 lg:gap-4">
-                {[
-                  'Next.js', 'React.js', 'TypeScript', 'Python', 'OpenAI API', 'Gemini API',
-                  'Agentic AI', 'Automation', 'Tailwind CSS', 'API Integration', 'Sanity CMS', 'AI Agents'
-                ].map((skill) => (
-                  <div 
-                    key={skill}
-                    className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300"
-                  >
-                    {skill}
-                  </div>
-                ))}
+                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">
+                  Next.js
+                </div>
+                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">
+                  React.js
+                </div>
+                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">
+                  TypeScript
+                </div>
+                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">
+                  Python
+                </div>
+                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">
+                  OpenAI API
+                </div>
+                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">
+                  Gemini API
+                </div>
+                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">
+                  Agentic AI
+                </div>
+                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">
+                  Automation
+                </div>
+                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">
+                  Tailwind CSS
+                </div>
+                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">
+                  API Integration
+                </div>
+                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">
+                  Sanity CMS
+                </div>
+                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">
+                  AI Agents
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="py-10 sm:py-16 lg:py-20 px-3 sm:px-4 lg:px-6 bg-gradient-to-r from-stone-800 to-stone-900">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6">
@@ -351,7 +369,6 @@ const AboutPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="py-4 sm:py-6 lg:py-8 px-3 sm:px-4 lg:px-6 border-t border-stone-700">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4">
           <div className="text-center md:text-left">
