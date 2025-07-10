@@ -139,6 +139,21 @@ const AboutPage = () => {
             <div className="space-y-6 md:space-y-8">
               <div className="border-l-2 border-amber-400 pl-4 md:pl-6 py-1">
                 <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-1">
+                  <h3 className="text-lg md:text-xl font-bold"> AI Automation Engineer</h3>
+                  <span className="bg-amber-400/10 text-amber-400 px-2 py-1 rounded-full text-xs md:text-sm">2025-Present-Onsite</span>
+                </div>
+                <p className="text-amber-200/80 italic mb-2 text-sm md:text-base">zApps Consulting</p>
+                <p className="text-amber-100/80 text-sm md:text-base">
+                   Developed multiple intelligent AI agents using Python, OpenAI/Gemini APIs. 
+                  Specialized in automating business processes and focused on scalable, 
+                  agentic automation solutions for businesses.
+                </p>
+              </div>
+
+            
+            <div className="space-y-6 md:space-y-8">
+              <div className="border-l-2 border-amber-400 pl-4 md:pl-6 py-1">
+                <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-1">
                   <h3 className="text-lg md:text-xl font-bold">Full Stack Developer</h3>
                   <span className="bg-amber-400/10 text-amber-400 px-2 py-1 rounded-full text-xs md:text-sm">2025-Present</span>
                 </div>
