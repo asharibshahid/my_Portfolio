@@ -131,58 +131,82 @@ const AboutPage = () => {
       </section>
 
       {/* Experience & Education */}
-      <section className="py-12 md:py-16 px-4 md:px-6 max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16">
+     <section className="py-8 sm:py-12 lg:py-16 px-3 sm:px-4 lg:px-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16">
           <div>
-            <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 pb-2 border-b border-amber-400/30">Experience</h2>
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 pb-2 border-b border-amber-400/30">
+              Experience
+            </h2>
             
-            <div className="space-y-6 md:space-y-8">
-              <div className="border-l-2 border-amber-400 pl-4 md:pl-6 py-1">
-                <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-1">
-                  <h3 className="text-lg md:text-xl font-bold"> AI Automation Engineer</h3>
-                  <span className="bg-amber-400/10 text-amber-400 px-2 py-1 rounded-full text-xs md:text-sm">2025-Present-Onsite</span>
+            <div className="space-y-6 sm:space-y-8">
+              <div className="border-l-2 border-amber-400 pl-3 sm:pl-4 lg:pl-6 py-1 hover:bg-stone-800/20 transition-colors duration-300 rounded-r-lg">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
+                  <h3 className="text-base sm:text-lg lg:text-xl font-bold">
+                    AI Automation Engineer
+                  </h3>
+                  <span className="bg-amber-400/10 text-amber-400 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm self-start">
+                    2025-Present
+                  </span>
                 </div>
-                <p className="text-amber-200/80 italic mb-2 text-sm md:text-base">zApps Consulting</p>
-                <p className="text-amber-100/80 text-sm md:text-base">
-                   Developed multiple intelligent AI agents using Python, OpenAI/Gemini APIs. 
+                <p className="text-amber-200/80 italic mb-2 text-xs sm:text-sm lg:text-base">
+                  zApps Consulting
+                </p>
+                <p className="text-amber-100/80 text-xs sm:text-sm lg:text-base leading-relaxed">
+                  Developed multiple intelligent AI agents using Python, OpenAI/Gemini APIs. 
                   Specialized in automating business processes and focused on scalable, 
                   agentic automation solutions for businesses.
                 </p>
               </div>
 
-            
-            <div className="space-y-6 md:space-y-8">
-              <div className="border-l-2 border-amber-400 pl-4 md:pl-6 py-1">
-                <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-1">
-                  <h3 className="text-lg md:text-xl font-bold">Full Stack Developer</h3>
-                  <span className="bg-amber-400/10 text-amber-400 px-2 py-1 rounded-full text-xs md:text-sm">2025-Present</span>
+              <div className="border-l-2 border-amber-400 pl-3 sm:pl-4 lg:pl-6 py-1 hover:bg-stone-800/20 transition-colors duration-300 rounded-r-lg">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
+                  <h3 className="text-base sm:text-lg lg:text-xl font-bold">
+                    Full Stack Developer
+                  </h3>
+                  <span className="bg-amber-400/10 text-amber-400 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm self-start">
+                    2025-Present
+                  </span>
                 </div>
-                <p className="text-amber-200/80 italic mb-2 text-sm md:text-base">Freelance</p>
-                <p className="text-amber-100/80 text-sm md:text-base">
+                <p className="text-amber-200/80 italic mb-2 text-xs sm:text-sm lg:text-base">
+                  Freelance
+                </p>
+                <p className="text-amber-100/80 text-xs sm:text-sm lg:text-base leading-relaxed">
                   Developed multiple responsive web applications using Next.js, TypeScript, 
                   and integrated APIs with CMS and Web3Form solutions for international clients.
                 </p>
               </div>
               
-              <div className="border-l-2 border-amber-400 pl-4 md:pl-6 py-1">
-                <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-1">
-                  <h3 className="text-lg md:text-xl font-bold">AI Agent Developer</h3>
-                  <span className="bg-amber-400/10 text-amber-400 px-2 py-1 rounded-full text-xs md:text-sm">Jan 2025-Present</span>
+              <div className="border-l-2 border-amber-400 pl-3 sm:pl-4 lg:pl-6 py-1 hover:bg-stone-800/20 transition-colors duration-300 rounded-r-lg">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
+                  <h3 className="text-base sm:text-lg lg:text-xl font-bold">
+                    AI Agent Developer
+                  </h3>
+                  <span className="bg-amber-400/10 text-amber-400 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm self-start">
+                    Jan 2025-Present
+                  </span>
                 </div>
-                <p className="text-amber-200/80 italic mb-2 text-sm md:text-base">Self Project | For SaaS</p>
-                <p className="text-amber-100/80 text-sm md:text-base">
-                  Fully autonomous AI HR agent that can grab attendance by face recognition, 
-                  call employees in local language, calculate salaries, and process bank transfers.
+                <p className="text-amber-200/80 italic mb-2 text-xs sm:text-sm lg:text-base">
+                  Self Project | For SaaS
+                </p>
+                <p className="text-amber-100/80 text-xs sm:text-sm lg:text-base leading-relaxed">
+                  Fully Autonomous AI HR Agent that can grab attendance by scanning faces, call employees at home 
+                  and talk in local language, calculate salary and transfer payments to bank accounts upon employee confirmation.
                 </p>
               </div>
               
-              <div className="border-l-2 border-amber-400 pl-4 md:pl-6 py-1">
-                <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-1">
-                  <h3 className="text-lg md:text-xl font-bold">Hackathon Participant</h3>
-                  <span className="bg-amber-400/10 text-amber-400 px-2 py-1 rounded-full text-xs md:text-sm">2025</span>
+              <div className="border-l-2 border-amber-400 pl-3 sm:pl-4 lg:pl-6 py-1 hover:bg-stone-800/20 transition-colors duration-300 rounded-r-lg">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
+                  <h3 className="text-base sm:text-lg lg:text-xl font-bold">
+                    Hackathon Participant
+                  </h3>
+                  <span className="bg-amber-400/10 text-amber-400 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm self-start">
+                    2025
+                  </span>
                 </div>
-                <p className="text-amber-200/80 italic mb-2 text-sm md:text-base">GIAIC Hackathon, Karachi</p>
-                <p className="text-amber-100/80 text-sm md:text-base">
+                <p className="text-amber-200/80 italic mb-2 text-xs sm:text-sm lg:text-base">
+                  GIAIC Hackathon, Karachi
+                </p>
+                <p className="text-amber-100/80 text-xs sm:text-sm lg:text-base leading-relaxed">
                   Built a functional e-commerce site in 48 hours using Next.js, 
                   Tailwind CSS, and Sanity CMS.
                 </p>
@@ -191,74 +215,107 @@ const AboutPage = () => {
           </div>
           
           <div>
-            <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 pb-2 border-b border-amber-400/30">Education</h2>
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 pb-2 border-b border-amber-400/30">
+              Education
+            </h2>
             
-            <div className="space-y-6 md:space-y-8">
-              <div className="border-l-2 border-amber-400 pl-4 md:pl-6 py-1">
-                <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-1">
-                  <h3 className="text-lg md:text-xl font-bold">Web & Agentic AI Engineering</h3>
-                  <span className="bg-amber-400/10 text-amber-400 px-2 py-1 rounded-full text-xs md:text-sm">2023-2025</span>
+            <div className="space-y-6 sm:space-y-8">
+              <div className="border-l-2 border-amber-400 pl-3 sm:pl-4 lg:pl-6 py-1 hover:bg-stone-800/20 transition-colors duration-300 rounded-r-lg">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
+                  <h3 className="text-base sm:text-lg lg:text-xl font-bold">
+                    Web & Agentic AI Engineering
+                  </h3>
+                  <span className="bg-amber-400/10 text-amber-400 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm self-start">
+                    2023-2025
+                  </span>
                 </div>
-                <p className="text-amber-200/80 italic mb-2 text-sm md:text-base">GIAIC - Karachi</p>
-                <p className="text-amber-100/80 text-sm md:text-base">
-                  Focus: AI, Python, Web Development, AGI (Governor s Initiative for AI & Computing)
+                <p className="text-amber-200/80 italic mb-2 text-xs sm:text-sm lg:text-base">
+                  GIAIC - Karachi
+                </p>
+                <p className="text-amber-100/80 text-xs sm:text-sm lg:text-base leading-relaxed">
+                  Focus: AI, Python, Web Development, AGI (Governor&apos;s Initiative for AI & Computing)
                 </p>
               </div>
               
-              <div className="border-l-2 border-amber-400 pl-4 md:pl-6 py-1">
-                <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-1">
-                  <h3 className="text-lg md:text-xl font-bold">Intermediate 1st Year</h3>
-                  <span className="bg-amber-400/10 text-amber-400 px-2 py-1 rounded-full text-xs md:text-sm">2025</span>
+              <div className="border-l-2 border-amber-400 pl-3 sm:pl-4 lg:pl-6 py-1 hover:bg-stone-800/20 transition-colors duration-300 rounded-r-lg">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
+                  <h3 className="text-base sm:text-lg lg:text-xl font-bold">
+                    Intermediate 1st Year
+                  </h3>
+                  <span className="bg-amber-400/10 text-amber-400 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm self-start">
+                    2025
+                  </span>
                 </div>
-                <p className="text-amber-200/80 italic mb-2 text-sm md:text-base">Private College - Karachi</p>
-                <p className="text-amber-100/80 text-sm md:text-base">Field: Computer Science</p>
+                <p className="text-amber-200/80 italic mb-2 text-xs sm:text-sm lg:text-base">
+                  Private College - Karachi
+                </p>
+                <p className="text-amber-100/80 text-xs sm:text-sm lg:text-base leading-relaxed">
+                  Field: Computer Science
+                </p>
               </div>
               
-              <div className="border-l-2 border-amber-400 pl-4 md:pl-6 py-1">
-                <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-1">
-                  <h3 className="text-lg md:text-xl font-bold">Hafiz AI Quran</h3>
-                  <span className="bg-amber-400/10 text-amber-400 px-2 py-1 rounded-full text-xs md:text-sm">2023</span>
+              <div className="border-l-2 border-amber-400 pl-3 sm:pl-4 lg:pl-6 py-1 hover:bg-stone-800/20 transition-colors duration-300 rounded-r-lg">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
+                  <h3 className="text-base sm:text-lg lg:text-xl font-bold">
+                    Hafiz Al Quran
+                  </h3>
+                  <span className="bg-amber-400/10 text-amber-400 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm self-start">
+                    2023
+                  </span>
                 </div>
-                <p className="text-amber-200/80 italic mb-2 text-sm md:text-base">Taneem al Madaris - Karachi Pak</p>
+                <p className="text-amber-200/80 italic mb-2 text-xs sm:text-sm lg:text-base">
+                  Taneem al Madaris - Karachi Pak
+                </p>
               </div>
             </div>
             
-            <div className="mt-8 md:mt-12">
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 pb-2 border-b border-amber-400/30">Technical Skills</h2>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
-                <div className="bg-stone-800/70 py-2 px-3 md:px-4 rounded text-center text-sm md:text-base">Next.js</div>
-                <div className="bg-stone-800/70 py-2 px-3 md:px-4 rounded text-center text-sm md:text-base">React.js</div>
-                <div className="bg-stone-800/70 py-2 px-3 md:px-4 rounded text-center text-sm md:text-base">TypeScript</div>
-                <div className="bg-stone-800/70 py-2 px-3 md:px-4 rounded text-center text-sm md:text-base">Python</div>
-                <div className="bg-stone-800/70 py-2 px-3 md:px-4 rounded text-center text-sm md:text-base">Agentic AI</div>
-                <div className="bg-stone-800/70 py-2 px-3 md:px-4 rounded text-center text-sm md:text-base">Prompt Engineering</div>
-                <div className="bg-stone-800/70 py-2 px-3 md:px-4 rounded text-center text-sm md:text-base">Tailwind CSS</div>
-                <div className="bg-stone-800/70 py-2 px-3 md:px-4 rounded text-center text-sm md:text-base">API Integration</div>
-                <div className="bg-stone-800/70 py-2 px-3 md:px-4 rounded text-center text-sm md:text-base">Sanity CMS</div>
+            <div className="mt-8 sm:mt-10 lg:mt-12">
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 pb-2 border-b border-amber-400/30">
+                Technical Skills
+              </h2>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 lg:gap-4">
+                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">
+                  Next.js
+                </div>
+                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">
+                  React.js
+                </div>
+                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">
+                  TypeScript
+                </div>
+                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">
+                  Python
+                </div>
+                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">
+                  OpenAI API
+                </div>
+                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">
+                  Gemini API
+                </div>
+                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">
+                  Agentic AI
+                </div>
+                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">
+                  Automation
+                </div>
+                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">
+                  Tailwind CSS
+                </div>
+                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">
+                  API Integration
+                </div>
+                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">
+                  Sanity CMS
+                </div>
+                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">
+                  AI Agents
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 md:py-20 px-4 md:px-6 bg-gradient-to-r from-stone-800 to-stone-900">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6">
-            Interested in Working Together?
-          </h2>
-          <p className="text-base md:text-lg mb-8 md:mb-10 max-w-2xl mx-auto text-amber-100/80">
-            Whether you need a cutting-edge web application or AI-powered solutions, 
-            Im ready to bring your ideas to life. Lets create something amazing.
-          </p>
-          <Link 
-            href="/contact" 
-            className="inline-block bg-amber-400 text-stone-900 font-bold px-6 py-3 md:px-8 md:py-4 rounded-md hover:bg-amber-300 transition-colors text-sm md:text-base"
-          >
-            Get In Touch
-          </Link>
-        </div>
-      </section>
 
       {/* Footer */}
       <footer className="py-6 md:py-8 px-4 md:px-6 border-t border-stone-700">
