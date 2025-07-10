@@ -145,7 +145,7 @@ const AboutPage = () => {
                     AI Automation Engineer
                   </h3>
                   <span className="bg-amber-400/10 text-amber-400 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm self-start">
-                    2025-Present
+                    2025-Present-Onsite
                   </span>
                 </div>
                 <p className="text-amber-200/80 italic mb-2 text-xs sm:text-sm lg:text-base">
