@@ -7,8 +7,8 @@ const Portfolio = () => {
   const handleDownloadCV = () => {
     // Create a temporary link element
     const link = document.createElement('a');
-    link.href = '/Asharib_Cv.pdf'; // Make sure this file is in your public folder
-    link.download = 'Asharib_CV.pdf';
+    link.href = '/CV.pdf'; // Make sure this file is in your public folder
+    link.download = 'CV.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -51,3 +51,4 @@ const Portfolio = () => {
 };
 
 export default Portfolio;
+
