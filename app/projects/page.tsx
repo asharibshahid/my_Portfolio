@@ -12,29 +12,29 @@ const Page = () => {
 
   const projects = [
     // AI/Python Projects
-    {
+     {
       id: 0,
-      title: "NlP APP",
-      description: "Intelligent  Natural language processing Ai Agent ",
-      tech: ["Python", "AI", "API Integration", "Automation"],
+      title: "Whatsapp Based Ai agents system ",
+      description: "A self-managing WhatsApp-based AI agent system that acts like a smart operations manager analyzing data, assigning work, following up with employees, and summarizing everything for the boss",
+      tech: ["Python", "MetaWhatsapp", "LLMS", "OpenAIAgentsSdk"],
       category: "ai",
-      link: "https://www.linkedin.com/posts/asharib-shahid-_python-nextjs-fastapi-activity-7331616520789274626-lK3m?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEuvhZ4BQcxul22iK__NsDK9PZ0ksh_ddUI",
-      github: "https://github.com/asharibshahid/AI_NLP-App_Python",
+      link: "https://chatgpt.com/share/68e55e70-9950-8008-b945-04215293810e",
+      github: "https://github.com/asharibshahid/Internal-communication-whatsapp",
       featured: true,
       year: "2025",
-      status: "Live"
+      status: "Completed"
     },
-    {
+     {
       id: 1,
-      title: "AI Dropshipping Agent",
-      description: "Intelligent agent for automating dropshipping operations with AI-powered decision making and market analysis.",
-      tech: ["Python", "AI/ML", "API Integration", "Automation"],
+      title: "Agentic AI WhatsApp Automation, ",
+      description: "This Agentic AI system is like having an AI operations team inside WhatsApp — it reads, understands, records, and acts  all autonomously.",
+      tech: ["Python", "Twillio", "LLMS", "OpenAIAgentsSdk"],
       category: "ai",
-      link: "https://shorturl.at/wWms5",
-      github: "https://github.com/asharibshahid/Droppshiping_Ai_Agent",
+      link: "https://chatgpt.com/share/68e55de2-a2d8-8008-9741-14db4b9d97c7",
+      github: "https://github.com/asharibshahid/Whatsapp-automation-Agentic",
       featured: true,
       year: "2025",
-      status: "Live"
+      status: "Completed"
     },
     {
       id: 2,
@@ -241,6 +241,31 @@ const Page = () => {
       year: "2025",
       status: "Completed"
     },
+    {
+      id: 19,
+      title: "NlP APP",
+      description: "Intelligent  Natural language processing Ai Agent ",
+      tech: ["Python", "AI", "API Integration", "Automation"],
+      category: "ai",
+      link: "https://www.linkedin.com/posts/asharib-shahid-_python-nextjs-fastapi-activity-7331616520789274626-lK3m?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEuvhZ4BQcxul22iK__NsDK9PZ0ksh_ddUI",
+      github: "https://github.com/asharibshahid/AI_NLP-App_Python",
+      featured: false,
+      year: "2025",
+      status: "Live"
+    },
+    {
+      id: 20,
+      title: "AI Dropshipping Agent",
+      description: "Intelligent agent for automating dropshipping operations with AI-powered decision making and market analysis.",
+      tech: ["Python", "AI/ML", "API Integration", "Automation"],
+      category: "ai",
+      link: "https://shorturl.at/wWms5",
+      github: "https://github.com/asharibshahid/Droppshiping_Ai_Agent",
+      featured: false,
+      year: "2025",
+      status: "Live"
+    },
+    
     
   ];
   
@@ -517,3 +542,5 @@ const Page = () => {
 }
 
 export default Page
+
+
