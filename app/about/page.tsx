@@ -1,31 +1,109 @@
-// app/about/page.tsx
-import { FaGithub, FaLinkedin, FaTwitter, FaLaptopCode, FaBrain, FaGraduationCap, FaDownload } from 'react-icons/fa';
+
+"use client"
+import { FaGithub, FaLinkedin, FaTwitter, FaLaptopCode, FaBrain, FaGraduationCap, FaDownload, FaBars, FaTimes } from 'react-icons/fa';
 import Image from "next/image";
 import Link from 'next/link';
-
-const NavBar = () => (
-  <nav className="flex flex-col md:flex-row justify-between items-center p-6 max-w-6xl mx-auto gap-4">
-    <div className="flex flex-wrap justify-center gap-4 md:gap-6">
-      <Link href="/" className="hover:text-amber-400 transition-colors text-sm md:text-base">Home</Link>
-      <Link href="/about" className="text-amber-400 border-b border-amber-400 text-sm md:text-base">About</Link>
-      <Link href="/projects" className="hover:text-amber-400 transition-colors text-sm md:text-base">Projects</Link>
-      <Link href="/contact" className="hover:text-amber-400 transition-colors text-sm md:text-base">Contact</Link>
-    </div>
-    
-    <a 
-      href="/CV.pdf" 
-      download
-      className="flex items-center gap-2 bg-amber-600 hover:bg-amber-500 text-white px-4 py-2 rounded-md transition-colors text-sm md:text-base"
-    >
-      <FaDownload /> Download CV
-    </a>
-  </nav>
-);
+import { useState } from 'react';
 
 const AboutPage = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-stone-900 to-stone-800 text-amber-50">
-      <NavBar />
+      
+      {/* Mobile Navbar */}
+      <nav className="lg:hidden fixed top-0 w-full z-50 backdrop-blur-md bg-stone-900/90 border-b border-amber-400/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center py-4">
+            {/* Download CV Button */}
+            <button 
+              onClick={() => {
+                const link = document.createElement('a');
+                link.href = '/Asharib_Cv.pdf';
+                link.download = 'Asharib_CV.pdf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
+              className="px-4 py-2 bg-gradient-to-r from-amber-500 to-amber-600 text-white rounded-lg font-medium hover:from-amber-600 hover:to-amber-700 transition-all duration-300 transform hover:scale-105 text-sm"
+            >
+              Download CV
+            </button>
+            
+            {/* Mobile Menu Button */}
+            <button 
+              onClick={toggleMobileMenu}
+              className="p-2 rounded-full bg-amber-500/20 border border-amber-400/30 hover:bg-amber-500/30 transition-all duration-300"
+            >
+              {isMobileMenuOpen ? <FaTimes className="text-amber-400" /> : <FaBars className="text-amber-400" />}
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      {/* Mobile Sidebar Menu */}
+      <div className={`lg:hidden fixed top-0 right-0 h-full w-64 bg-stone-900/95 backdrop-blur-md z-40 transform transition-transform duration-300 ease-in-out border-l border-amber-400/20 ${
+        isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+      }`}>
+        <div className="flex flex-col p-6 space-y-6 mt-20">
+          <Link 
+            href="/" 
+            className="text-amber-100 hover:text-amber-400 transition-colors duration-300 py-2 px-4 rounded-lg hover:bg-amber-400/10 text-lg font-medium"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Home
+          </Link>
+          <Link 
+            href="/projects" 
+            className="text-amber-100 hover:text-amber-400 transition-colors duration-300 py-2 px-4 rounded-lg hover:bg-amber-400/10 text-lg font-medium"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Work
+          </Link>
+          <Link 
+            href="/about" 
+            className="text-amber-400 bg-amber-400/10 py-2 px-4 rounded-lg text-lg font-medium"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            About
+          </Link>
+          <Link 
+            href="/contact" 
+            className="text-amber-100 hover:text-amber-400 transition-colors duration-300 py-2 px-4 rounded-lg hover:bg-amber-400/10 text-lg font-medium"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Contact
+          </Link>
+          
+          {/* Social Links in Mobile Menu */}
+          <div className="flex space-x-4 pt-4 border-t border-amber-400/20">
+            <a href="https://github.com/asharibshahid" className="text-amber-100/60 hover:text-amber-400 transition-colors p-2">
+              <FaGithub className="text-xl" />
+            </a>
+            <a href="https://linkedin.com/in/asharib-shahid-/" className="text-amber-100/60 hover:text-amber-400 transition-colors p-2">
+              <FaLinkedin className="text-xl" />
+            </a>
+            <a href="https://x.com/AsharibSheikh01" className="text-amber-100/60 hover:text-amber-400 transition-colors p-2">
+              <FaTwitter className="text-xl" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Overlay when mobile menu is open */}
+      {isMobileMenuOpen && (
+        <div 
+          className="lg:hidden fixed inset-0 bg-black/50 z-30"
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+      )}
+
+      {/* Add padding-top for mobile to account for fixed navbar */}
+      <div className="pt-16 lg:pt-0">
 
       {/* Hero Section */}
       <section className="py-8 md:py-16 px-4 md:px-6 max-w-6xl mx-auto">
@@ -53,13 +131,20 @@ const AboutPage = () => {
               Hi, Im <span className="text-amber-400">Asharib Shahid</span>
             </h1>
             <h2 className="text-xl md:text-2xl mb-4 md:mb-6 font-light text-amber-200">
-              Web Developer & Agentic AI Specialist
+              WEB & AGENTIC AI ENGINEER
             </h2>
             <p className="text-base md:text-lg mb-6 md:mb-8 max-w-2xl leading-relaxed">
-              A 17 y/o self-driven and tech-savvy student with a passion for modern web development 
-              and Artificial Intelligence. I specialize in building full-stack web applications 
-              and integrating AI to create future-forward digital solutions.
+              Tech focused developer from the AI & Computing (GIAIC) program with
+1.5 years of hands-on experience in modern web development and
+Agentic AI automation. Skilled in building scalable fullstack applications
+with Next.js and engineering intelligent agents that improve
+productivity and workflows. Successfully worked with 10+ clients on
+real projects and earned 3 Job offer letters within 9 months of starting
+my career. Dedicated to continuous learning, delivering reliable digital
+solutions, and building future ready AI driven products
             </p>
+            
+
             <div className="flex flex-wrap gap-4">
               <Link 
                 href="https://github.com/asharibshahid" 
@@ -82,8 +167,11 @@ const AboutPage = () => {
         </div>
       </section>
 
+      {/* Rest of your existing content remains exactly the same */}
       {/* Core Expertise */}
-      <section className="py-12 md:py-16 px-4 md:px-6 bg-stone-800/50">
+    
+        {/* ... your existing core expertise section ... */}
+         <section className="py-12 md:py-16 px-4 md:px-6 bg-stone-800/50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">My Core Expertise</h2>
@@ -130,9 +218,11 @@ const AboutPage = () => {
         </div>
       </section>
 
+
       {/* Experience & Education */}
-     <section className="py-8 sm:py-12 lg:py-16 px-3 sm:px-4 lg:px-6 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16">
+      <section className="py-8 sm:py-12 lg:py-16 px-3 sm:px-4 lg:px-6 max-w-7xl mx-auto">
+        {/* ... your existing experience & education section ... */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16">
           <div>
             <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8 pb-2 border-b border-amber-400/30">
               Experience
@@ -142,10 +232,28 @@ const AboutPage = () => {
               <div className="border-l-2 border-amber-400 pl-3 sm:pl-4 lg:pl-6 py-1 hover:bg-stone-800/20 transition-colors duration-300 rounded-r-lg">
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
                   <h3 className="text-base sm:text-lg lg:text-xl font-bold">
+                    Agentic AI Engineer
+                  </h3>
+                  <span className="bg-amber-400/10 text-amber-400 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm self-start">
+                    2025 Present Onsite
+                  </span>
+                </div>
+                <p className="text-amber-200/80 italic mb-2 text-xs sm:text-sm lg:text-base">
+                  Vertex Sphere
+                </p>
+                <p className="text-amber-100/80 text-xs sm:text-sm lg:text-base leading-relaxed">
+                  Have To Work In LLMS Agentic Ai Patterns And Systems Building AI Agents That Can Work Autonomously To Solve Complex Problems And Automate Tasks.
+                  Integrate AI Solutions Into Existing Workflows And Products like whatsapp.
+                  Continuously Research And Experiment With Emerging AI Technologies To Enhance Agent Capabilities And Performance.
+                </p>
+              </div>
+              <div className="border-l-2 border-amber-400 pl-3 sm:pl-4 lg:pl-6 py-1 hover:bg-stone-800/20 transition-colors duration-300 rounded-r-lg">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
+                  <h3 className="text-base sm:text-lg lg:text-xl font-bold">
                     AI Automation Engineer
                   </h3>
                   <span className="bg-amber-400/10 text-amber-400 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm self-start">
-                    2025-Present-Onsite
+                    2025 Onsite
                   </span>
                 </div>
                 <p className="text-amber-200/80 italic mb-2 text-xs sm:text-sm lg:text-base">
@@ -164,7 +272,7 @@ const AboutPage = () => {
                     Full Stack Developer
                   </h3>
                   <span className="bg-amber-400/10 text-amber-400 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm self-start">
-                    2025-Present
+                    2024
                   </span>
                 </div>
                 <p className="text-amber-200/80 italic mb-2 text-xs sm:text-sm lg:text-base">
@@ -176,23 +284,7 @@ const AboutPage = () => {
                 </p>
               </div>
               
-              <div className="border-l-2 border-amber-400 pl-3 sm:pl-4 lg:pl-6 py-1 hover:bg-stone-800/20 transition-colors duration-300 rounded-r-lg">
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
-                  <h3 className="text-base sm:text-lg lg:text-xl font-bold">
-                    AI Agent Developer
-                  </h3>
-                  <span className="bg-amber-400/10 text-amber-400 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm self-start">
-                    Jan 2025-Present
-                  </span>
-                </div>
-                <p className="text-amber-200/80 italic mb-2 text-xs sm:text-sm lg:text-base">
-                  Self Project | For SaaS
-                </p>
-                <p className="text-amber-100/80 text-xs sm:text-sm lg:text-base leading-relaxed">
-                  Fully Autonomous AI HR Agent that can grab attendance by scanning faces, call employees at home 
-                  and talk in local language, calculate salary and transfer payments to bank accounts upon employee confirmation.
-                </p>
-              </div>
+            
               
               <div className="border-l-2 border-amber-400 pl-3 sm:pl-4 lg:pl-6 py-1 hover:bg-stone-800/20 transition-colors duration-300 rounded-r-lg">
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
@@ -200,7 +292,7 @@ const AboutPage = () => {
                     Hackathon Participant
                   </h3>
                   <span className="bg-amber-400/10 text-amber-400 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm self-start">
-                    2025
+                    2023
                   </span>
                 </div>
                 <p className="text-amber-200/80 italic mb-2 text-xs sm:text-sm lg:text-base">
@@ -274,30 +366,35 @@ const AboutPage = () => {
                 Technical Skills
               </h2>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 lg:gap-4">
+                
+                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">
+                  Agents Sdk
+                </div>
+                  <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">
+                  Prompt Engineering
+                </div>
+                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">
+                  OpenAI API
+                </div>
+               
+                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">
+                  Agentic AI
+                </div>
+                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">
+                  Ai Automation 
+                </div>
+
                 <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">
                   Next.js
                 </div>
-                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">
-                  React.js
-                </div>
+               
                 <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">
                   TypeScript
                 </div>
                 <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">
                   Python
                 </div>
-                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">
-                  OpenAI API
-                </div>
-                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">
-                  Gemini API
-                </div>
-                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">
-                  Agentic AI
-                </div>
-                <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">
-                  Automation
-                </div>
+                
                 <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">
                   Tailwind CSS
                 </div>
@@ -308,18 +405,19 @@ const AboutPage = () => {
                   Sanity CMS
                 </div>
                 <div className="bg-stone-800/70 py-2 px-2 sm:px-3 lg:px-4 rounded text-center text-xs sm:text-sm lg:text-base hover:bg-amber-400/10 transition-colors duration-300">
-                  AI Agents
+                  Databases
                 </div>
+                
               </div>
             </div>
           </div>
         </div>
       </section>
 
-
       {/* Footer */}
       <footer className="py-6 md:py-8 px-4 md:px-6 border-t border-stone-700">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+        {/* ... your existing footer ... */}
+         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-center md:text-left">
             <div className="text-lg md:text-xl font-bold">
               <span className="text-amber-400">A</span>SHARIB SHAHID
@@ -344,8 +442,11 @@ const AboutPage = () => {
           </div>
         </div>
       </footer>
+
+      </div>
     </div>
   );
 };
 
 export default AboutPage;
+
