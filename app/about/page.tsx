@@ -1,6 +1,6 @@
 
 "use client"
-import { FaGithub, FaLinkedin, FaTwitter, FaLaptopCode, FaBrain, FaGraduationCap, FaDownload, FaBars, FaTimes } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaTwitter, FaLaptopCode, FaBrain, FaGraduationCap, FaBars, FaTimes } from 'react-icons/fa';
 import Image from "next/image";
 import Link from 'next/link';
 import { useState } from 'react';
@@ -449,4 +449,5 @@ solutions, and building future ready AI driven products
 };
 
 export default AboutPage;
+
 
