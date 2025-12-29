@@ -112,7 +112,7 @@ const AboutPage = () => {
             <div className="relative">
               <div className="w-48 h-48 md:w-64 md:h-64 bg-amber-400/10 rounded-full overflow-hidden border-4 border-amber-400/30">
                 <Image
-                  src="/pfp2.jpeg"
+                  src="/pfp2.png"
                   alt="Asharib Shahid"
                   className="rounded-full object-cover w-full h-full"
                   width={256}
@@ -449,6 +449,7 @@ solutions, and building future ready AI driven products
 };
 
 export default AboutPage;
+
 
 
 
